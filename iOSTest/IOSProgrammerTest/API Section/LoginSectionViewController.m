@@ -9,7 +9,11 @@
 #import "LoginSectionViewController.h"
 #import "MainMenuViewController.h"
 
+
 @interface LoginSectionViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextInput;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextInput;
+@property (weak, nonatomic) IBOutlet UIButton *loginButtonTapped;
 
 @end
 

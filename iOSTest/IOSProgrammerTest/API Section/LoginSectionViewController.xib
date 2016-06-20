@@ -7,6 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginSectionViewController">
             <connections>
+                <outlet property="loginButtonTapped" destination="GpS-SN-dIL" id="zGn-8r-CgF"/>
+                <outlet property="passwordTextInput" destination="RHh-d8-keK" id="0C2-dx-YWx"/>
+                <outlet property="usernameTextInput" destination="ZKa-Ot-VOi" id="KAk-zs-aPQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
