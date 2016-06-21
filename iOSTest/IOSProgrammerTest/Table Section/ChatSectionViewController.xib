@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatSectionViewController">
@@ -12,12 +14,32 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" userLabel="ChatSectionViewController">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bY-Kz-ENX">
-                    <rect key="frame" x="8" y="8" width="88" height="51"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="udg-gG-eTY">
+                    <rect key="frame" x="0.0" y="52" width="320" height="516"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="udg-gG-eTY" secondAttribute="height" multiplier="80:129" id="pyD-oD-Hvg"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="pyD-oD-Hvg"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Qfb-t0-gjY"/>
+                        <outlet property="delegate" destination="-1" id="Iog-10-8d2"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bY-Kz-ENX">
+                    <rect key="frame" x="0.0" y="8" width="45" height="52"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="7Oj-Rg-cdP"/>
+                        <constraint firstAttribute="width" constant="45" id="gId-m8-Fcv"/>
+                    </constraints>
                     <state key="normal" title="Back">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -25,17 +47,29 @@
                         <action selector="backAction:" destination="-1" eventType="touchUpInside" id="1cb-Mh-taT"/>
                     </connections>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="udg-gG-eTY">
-                    <rect key="frame" x="0.0" y="52" width="320" height="516"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="Qfb-t0-gjY"/>
-                        <outlet property="delegate" destination="-1" id="Iog-10-8d2"/>
-                    </connections>
-                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="udg-gG-eTY" secondAttribute="bottom" id="0Ba-Aq-WzU"/>
+                <constraint firstItem="udg-gG-eTY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JxZ-84-KFr"/>
+                <constraint firstItem="udg-gG-eTY" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="MN9-1Z-WMk"/>
+                <constraint firstItem="udg-gG-eTY" firstAttribute="leading" secondItem="0bY-Kz-ENX" secondAttribute="leading" id="cuG-DI-iBf"/>
+                <constraint firstAttribute="bottom" secondItem="udg-gG-eTY" secondAttribute="bottom" id="dbl-Ct-2h2"/>
+                <constraint firstAttribute="trailing" secondItem="udg-gG-eTY" secondAttribute="trailing" id="eiA-8K-yfF"/>
+                <constraint firstItem="0bY-Kz-ENX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="i8q-O0-WhE"/>
+                <constraint firstItem="udg-gG-eTY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="t4O-03-rjX"/>
+                <constraint firstItem="udg-gG-eTY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tAl-5I-1v8"/>
+                <constraint firstItem="udg-gG-eTY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="52" id="vrp-Rq-oJp"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="0Ba-Aq-WzU"/>
+                    <exclude reference="MN9-1Z-WMk"/>
+                    <exclude reference="eiA-8K-yfF"/>
+                    <exclude reference="t4O-03-rjX"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

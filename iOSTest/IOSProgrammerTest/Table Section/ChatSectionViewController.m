@@ -8,16 +8,21 @@
 
 #import "ChatSectionViewController.h"
 #import "MainMenuViewController.h"
+#import "AvatarImageNotification.h"
 #import "ChatCell.h"
 
-#define TABLE_CELL_HEIGHT 45.0f
+#define TABLE_CELL_HEIGHT 68.0f
+
 
 @interface ChatSectionViewController ()
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *loadedChatData;
+
 @end
 
 @implementation ChatSectionViewController
+
+#pragma  viewDidLoad
 
 - (void)viewDidLoad
 {
@@ -25,7 +30,9 @@
     
     self.loadedChatData = [[NSMutableArray alloc] init];
     [self loadJSONData];
+    
 }
+#pragma JSON Data
 
 - (void)loadJSONData
 {
@@ -61,13 +68,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (IBAction)backAction:(id)sender
-{
-    MainMenuViewController *mainMenuViewController = [[MainMenuViewController alloc] init];
-    [self.navigationController pushViewController:mainMenuViewController animated:YES];
-}
-
 #pragma mark - UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -77,14 +77,14 @@
 
     if (cell == nil)
     {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellIdentifier
+                                                    owner:self options:nil];
         cell = (ChatCell *)[nib objectAtIndex:0];
     }
 
     ChatData *chatData = [self.loadedChatData objectAtIndex:[indexPath row]];
-
     [cell loadWithData:chatData];
-
+    
     return cell;
 }
 
@@ -98,5 +98,16 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return TABLE_CELL_HEIGHT;
+}
+#pragma Navigation
+
+- (IBAction)backAction:(id)sender
+{
+    MainMenuViewController *mainMenuViewController = [[MainMenuViewController alloc] init];
+    [self.navigationController pushViewController:mainMenuViewController animated:YES];
+}
+-(BOOL)prefersStatusBarHidden {
+    // Hide status bar
+    return YES;
 }
 @end

@@ -10,5 +10,4 @@
 
 @interface AnimationSectionViewController : UIViewController
 
-
 @end

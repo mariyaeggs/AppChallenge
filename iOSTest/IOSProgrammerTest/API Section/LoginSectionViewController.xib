@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginSectionViewController">
             <connections>
-                <outlet property="loginButtonTapped" destination="GpS-SN-dIL" id="zGn-8r-CgF"/>
                 <outlet property="passwordTextInput" destination="RHh-d8-keK" id="0C2-dx-YWx"/>
                 <outlet property="usernameTextInput" destination="ZKa-Ot-VOi" id="KAk-zs-aPQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -18,49 +17,77 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDP-zC-6Xi">
-                    <rect key="frame" x="0.0" y="0.0" width="34" height="30"/>
-                    <state key="normal" title="Back">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="J25-hm-NYq"/>
-                    </connections>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_login.png" translatesAutoresizingMaskIntoConstraints="NO" id="n8N-7Q-h9Q">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" alpha="0.64999997615814209" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZKa-Ot-VOi">
-                    <rect key="frame" x="0.0" y="64" width="320" height="51"/>
+                <textField opaque="NO" clipsSubviews="YES" alpha="0.64999997615814209" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="    username" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZKa-Ot-VOi">
+                    <rect key="frame" x="0.0" y="71" width="320" height="52"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="9qp-HI-Aro"/>
+                        <constraint firstAttribute="height" constant="52" id="RJj-vK-QLL"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" alpha="0.65000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RHh-d8-keK">
-                    <rect key="frame" x="0.0" y="129" width="320" height="51"/>
+                <textField opaque="NO" clipsSubviews="YES" alpha="0.65000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="    password" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RHh-d8-keK">
+                    <rect key="frame" x="0.0" y="136" width="320" height="52"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="B5c-s6-29C"/>
+                        <constraint firstAttribute="width" constant="320" id="hpp-yl-GJx"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpS-SN-dIL">
-                    <rect key="frame" x="32" y="224" width="257" height="64"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpS-SN-dIL">
+                    <rect key="frame" x="25" y="252" width="270" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="aet-uw-bEo"/>
+                        <constraint firstAttribute="width" constant="270" id="joL-LU-ygd"/>
+                    </constraints>
                     <state key="normal" title="Log In" backgroundImage="btn_login">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="45P-SV-Oqg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDP-zC-6Xi">
+                    <rect key="frame" x="0.0" y="0.0" width="41" height="41"/>
+                    <state key="normal" image="btn_back">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="backButton:" destination="-1" eventType="touchUpInside" id="aJD-rV-pBa"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="n8N-7Q-h9Q" secondAttribute="bottom" id="BQA-gU-BVw"/>
-                <constraint firstItem="n8N-7Q-h9Q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Byp-RX-7gt"/>
-                <constraint firstItem="n8N-7Q-h9Q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GG8-cv-Uzh"/>
-                <constraint firstAttribute="trailing" secondItem="n8N-7Q-h9Q" secondAttribute="trailing" id="R9o-5T-8oG"/>
+                <constraint firstItem="n8N-7Q-h9Q" firstAttribute="top" secondItem="TDP-zC-6Xi" secondAttribute="top" id="0Bp-dm-v8u"/>
+                <constraint firstItem="RHh-d8-keK" firstAttribute="leading" secondItem="n8N-7Q-h9Q" secondAttribute="leading" id="2FU-oK-gJq"/>
+                <constraint firstItem="ZKa-Ot-VOi" firstAttribute="top" secondItem="TDP-zC-6Xi" secondAttribute="bottom" constant="30" id="6xM-JQ-sSb"/>
+                <constraint firstItem="RHh-d8-keK" firstAttribute="top" secondItem="ZKa-Ot-VOi" secondAttribute="bottom" constant="13" id="Ajj-em-3g0"/>
+                <constraint firstItem="n8N-7Q-h9Q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="DnI-rz-zUo"/>
+                <constraint firstItem="ZKa-Ot-VOi" firstAttribute="leading" secondItem="TDP-zC-6Xi" secondAttribute="leading" id="O5b-OR-6xn"/>
+                <constraint firstAttribute="bottom" secondItem="n8N-7Q-h9Q" secondAttribute="bottom" id="TSq-Er-fma"/>
+                <constraint firstAttribute="trailing" secondItem="RHh-d8-keK" secondAttribute="trailing" id="YdP-Tt-d5c"/>
+                <constraint firstAttribute="trailing" secondItem="n8N-7Q-h9Q" secondAttribute="trailing" id="bSw-cE-qXn"/>
+                <constraint firstItem="ZKa-Ot-VOi" firstAttribute="centerX" secondItem="GpS-SN-dIL" secondAttribute="centerX" id="jK4-FF-Zwn"/>
+                <constraint firstItem="GpS-SN-dIL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mPc-Tv-M8h"/>
+                <constraint firstItem="n8N-7Q-h9Q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mhr-kN-Rde"/>
+                <constraint firstItem="ZKa-Ot-VOi" firstAttribute="leading" secondItem="n8N-7Q-h9Q" secondAttribute="leading" id="okV-wf-kXq"/>
+                <constraint firstItem="GpS-SN-dIL" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="pDo-DJ-VQt"/>
+                <constraint firstItem="ZKa-Ot-VOi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uPd-Yf-AXJ"/>
+                <constraint firstItem="ZKa-Ot-VOi" firstAttribute="leading" secondItem="RHh-d8-keK" secondAttribute="leading" id="wd9-4N-pfq"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
     <resources>
         <image name="bg_login.png" width="320" height="568"/>
+        <image name="btn_back" width="41" height="41"/>
         <image name="btn_login" width="244" height="55"/>
     </resources>
 </document>

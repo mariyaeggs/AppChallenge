@@ -3,11 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnimationSectionViewController">
             <connections>
                 <outlet property="logoImageView" destination="Ncr-Sq-Ycr" id="pc7-rR-mrv"/>
+                <outlet property="spinButtonTapped" destination="l0K-yS-JA4" id="E0S-hW-qDv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,8 +24,8 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_animation.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wgv-cR-nGh">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbj-IL-RFt" userLabel="btn_back">
-                    <rect key="frame" x="-23" y="-6" width="81" height="41"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbj-IL-RFt" userLabel="btn_back">
+                    <rect key="frame" x="25" y="8" width="41" height="41"/>
                     <state key="normal" image="btn_back.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -31,24 +33,42 @@
                         <action selector="backAction:" destination="-1" eventType="touchUpInside" id="smt-Qj-UGc"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0K-yS-JA4">
-                    <rect key="frame" x="38" y="471" width="245" height="56"/>
-                    <state key="normal" title="Spin" backgroundImage="btn_bg_spin.png"/>
-                </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gpc_logo_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ncr-Sq-Ycr">
-                    <rect key="frame" x="81" y="184" width="158" height="154"/>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gpc_logo_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ncr-Sq-Ycr">
+                    <rect key="frame" x="81" y="207" width="158" height="154"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="158" id="S4Z-SE-RhF"/>
+                        <constraint firstAttribute="height" constant="154" id="Yvw-Ya-bRO"/>
+                    </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0K-yS-JA4">
+                    <rect key="frame" x="25" y="471" width="270" height="62"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="270" id="ORe-Hf-jhl"/>
+                        <constraint firstAttribute="height" constant="62" id="nG1-yF-P8B"/>
+                    </constraints>
+                    <state key="normal" title="Spin" backgroundImage="btn_bg_spin.png"/>
+                    <connections>
+                        <action selector="spinAction:" destination="-1" eventType="touchUpInside" id="sHA-Bp-sap"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="8YZ-Mj-N42" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2lf-pT-zVD"/>
-                <constraint firstItem="Wgv-cR-nGh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JR5-d3-84B"/>
-                <constraint firstItem="8YZ-Mj-N42" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="X1V-uN-TDM"/>
-                <constraint firstAttribute="bottom" secondItem="Wgv-cR-nGh" secondAttribute="bottom" id="fgg-9E-dsS"/>
-                <constraint firstAttribute="trailing" secondItem="8YZ-Mj-N42" secondAttribute="trailing" id="iWu-lS-cgZ"/>
-                <constraint firstAttribute="bottom" secondItem="8YZ-Mj-N42" secondAttribute="bottom" id="pmx-vr-zwI"/>
-                <constraint firstItem="Wgv-cR-nGh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sdz-yO-p8Q"/>
-                <constraint firstAttribute="trailing" secondItem="Wgv-cR-nGh" secondAttribute="trailing" id="y6b-jY-bVt"/>
+                <constraint firstItem="Wgv-cR-nGh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1rM-TF-sIP"/>
+                <constraint firstItem="Ncr-Sq-Ycr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2F4-OI-VYt"/>
+                <constraint firstItem="l0K-yS-JA4" firstAttribute="leading" secondItem="Tbj-IL-RFt" secondAttribute="leading" id="6IU-Fm-Czk"/>
+                <constraint firstAttribute="bottom" secondItem="l0K-yS-JA4" secondAttribute="bottom" constant="35" id="FWF-48-5rN"/>
+                <constraint firstItem="Ncr-Sq-Ycr" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="GhW-Qf-hez"/>
+                <constraint firstItem="Wgv-cR-nGh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="K0t-3V-aaz"/>
+                <constraint firstItem="Tbj-IL-RFt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="Lv4-r3-SAC"/>
+                <constraint firstItem="l0K-yS-JA4" firstAttribute="centerX" secondItem="Wgv-cR-nGh" secondAttribute="centerX" id="NRp-8v-wYV"/>
+                <constraint firstItem="l0K-yS-JA4" firstAttribute="centerX" secondItem="8YZ-Mj-N42" secondAttribute="centerX" id="QTU-k8-lOV"/>
+                <constraint firstAttribute="trailing" secondItem="Wgv-cR-nGh" secondAttribute="trailing" id="WRN-8A-fu4"/>
+                <constraint firstItem="8YZ-Mj-N42" firstAttribute="bottom" secondItem="Wgv-cR-nGh" secondAttribute="bottom" id="Wus-LB-h44"/>
+                <constraint firstAttribute="bottom" secondItem="Wgv-cR-nGh" secondAttribute="bottom" id="mhH-9c-adM"/>
+                <constraint firstItem="8YZ-Mj-N42" firstAttribute="top" secondItem="Wgv-cR-nGh" secondAttribute="top" id="p4D-Vd-q2u"/>
+                <constraint firstItem="8YZ-Mj-N42" firstAttribute="leading" secondItem="Wgv-cR-nGh" secondAttribute="leading" id="rFo-7Q-jgk"/>
+                <constraint firstItem="l0K-yS-JA4" firstAttribute="centerX" secondItem="Ncr-Sq-Ycr" secondAttribute="centerX" id="ySP-en-XWr"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

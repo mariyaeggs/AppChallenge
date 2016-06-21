@@ -6,6 +6,7 @@
 target 'IOSProgrammerTest' do
 
 pod 'AFNetworking', '~> 3.0'
+  pod 'FastImageCache', '~> 1.5'
 
 end
 

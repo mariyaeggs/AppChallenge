@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <dispatch/dispatch.h>
 
 @interface ChatSectionViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 

@@ -17,6 +17,7 @@
 
 @implementation MainMenuViewController
 
+#pragma  viewDidLoad
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -28,7 +29,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+#pragma Navigation Actions 
 - (IBAction)tableSectionAction:(id)sender
 {
     ChatSectionViewController *tableSectionViewController = [[ChatSectionViewController alloc] init];
@@ -43,5 +44,9 @@
 {
     AnimationSectionViewController *animationSectionViewController = [[AnimationSectionViewController alloc] init];
     [self.navigationController pushViewController:animationSectionViewController animated:YES];
+}
+-(BOOL)prefersStatusBarHidden {
+    // Hide status bar
+    return YES;
 }
 @end
